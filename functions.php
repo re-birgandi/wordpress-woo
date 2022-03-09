@@ -1,8 +1,5 @@
 <?php
-add_theme_support( 'custom-logo' );
-add_theme_support( 'title-tag' );
-add_theme_support( 'custom-header' );
-add_theme_support( 'woocommerce' );
+
 
 //CONST  DIR
 define( 'BRS_DIR_TH', get_template_directory() );
@@ -18,14 +15,21 @@ const BRS_URL_ASSETS = BRS_URL_TH . 'assets/';
 const BRS_URL_CSS    = BRS_URL_ASSETS . 'css/';
 const BRS_URL_JS     = BRS_URL_ASSETS . 'js/';
 const BRS_URL_IMG    = BRS_URL_ASSETS . 'img/';
+const BRS_URL_FONTAWESOME    = BRS_URL_ASSETS . 'fontawesome/';
 
 
-//INCLUDE
+//INCLUDE actions
 include BRS_DIR_FUN_ACTIONS . 'brs_enqueue_scripts.php';
+include BRS_DIR_FUN_ACTIONS . 'brs_after_setup_theme.php';
+
+
+//INCLUDE FILTERS
+include  BRS_DIR_FUN_FILTERS.'brs_script_loader_tag.php';
 
 //ACTIONS
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );
+add_action( 'after_setup_theme', 'brs_after_setup_theme' );
 
 //FILTERS
-
+//add_filter( 'script_loader_tag', 'brs_script_loader_tag', 10, 3 );
 
