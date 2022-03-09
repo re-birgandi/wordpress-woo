@@ -24,12 +24,9 @@ include BRS_DIR_FUN_ACTIONS . 'brs_after_setup_theme.php';
 
 
 //INCLUDE FILTERS
-include  BRS_DIR_FUN_FILTERS.'brs_script_loader_tag.php';
 
 //ACTIONS
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );
 add_action( 'after_setup_theme', 'brs_after_setup_theme' );
 
 //FILTERS
-//add_filter( 'script_loader_tag', 'brs_script_loader_tag', 10, 3 );
-
