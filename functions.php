@@ -21,12 +21,18 @@ const BRS_URL_FONTAWESOME    = BRS_URL_ASSETS . 'fontawesome/';
 //INCLUDE actions
 include BRS_DIR_FUN_ACTIONS . 'brs_enqueue_scripts.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_after_setup_theme.php';
+include BRS_DIR_FUN_ACTIONS . 'brs_register_sidebars.php';
 
 
-//INCLUDE FILTERS
+ //INCLUDE FILTERS
 
 //ACTIONS
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );
 add_action( 'after_setup_theme', 'brs_after_setup_theme' );
+add_action( 'widgets_init', 'brs_register_sidebars' );
 
-//FILTERS
+ //FILTERS
+
+
+
+
