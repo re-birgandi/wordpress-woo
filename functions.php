@@ -35,4 +35,3 @@ add_action( 'widgets_init', 'brs_register_sidebars' );
 
 
 
-
