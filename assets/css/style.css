@@ -21,7 +21,7 @@ https://emacs.ir/
 @font-face {
     font-family: 'IRANSansWebFaNum';
     src: url(../fonts/fonts/eot/IRANSansWebFaNum.eot);
-    src: url(../fonts/fonts/eot/IRANSansWebFaNum.eot) format('embedded-opentype'), url(../fonts/fonts/woff2/IRANSansWebFaNum.woff) format('woff2'), url(../fonts/fonts/woff/IRANSansWebFaNum.woff) format('woff'), url(../fonts/fonts/ttf/IRANSansWebFaNum.ttf) format('truetype'), url(../fonts/fonts/eot/IRANSansWebFaNum.svg) format('svg')
+    src: url(../fonts/fonts/eot/IRANSansWebFaNum.eot) format('embedded-opentype'), url(../fonts/fonts/woff2/IRANSansWebFaNum.woff2) format('woff2'), url(../fonts/fonts/woff/IRANSansWebFaNum.woff) format('woff'), url(../fonts/fonts/ttf/IRANSansWebFaNum.ttf) format('truetype'), url(../fonts/fonts/eot/IRANSansWebFaNum.svg) format('svg')
 }
 
 * {

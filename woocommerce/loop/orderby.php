@@ -18,14 +18,24 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-?>
-<form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
-		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-		<?php endforeach; ?>
-	</select>
-	<input type="hidden" name="paged" value="1" />
-	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
-</form>
+ ?>
+<div class="pull-right">
+    <div class="sort-filter">
+        <span class="text-uppercase coustom-orderby">مرتب سازی بر اساس:</span>
+        <form  style="display: inline-block;" method="get">
+            <select name="orderby" class=" input" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+				<?php foreach ( $catalog_orderby_options as $id => $name ) :
+                    //مرتب‌سازی بر اساس
+					$pattern = '/مرتب‌سازی بر اساس/i';
+					$name =preg_replace($pattern, '', $name);
+					$pattern2 = '/مرتب‌سازی/i';
+					$name =preg_replace($pattern2, '', $name);
+                    ?>
+                    <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+				<?php endforeach; ?>
+            </select>
+            <input type="hidden" name="paged" value="1"/>
+			<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+        </form>
+    </div>
+</div>

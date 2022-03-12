@@ -44,9 +44,9 @@ get_header( 'shop' );
         <div class="container">
             <!-- row -->
             <div class="row">
-                
+
                 <!-- ASIDE START SIDEBAR-->
-                <div id="aside" class="col-md-3">
+                 <div id="aside" class="col-md-3">
 	            <?php
 	            /**
 	             * Hook: woocommerce_sidebar.
@@ -75,9 +75,13 @@ get_header( 'shop' );
 						/**TODO::category, tag, term, or author
 						 * @return void
 						 */
+                       ?>
 
-						do_action( 'woocommerce_archive_description' );
+                        <?php
+                        //TODO::DISABLE woocommerce_archive_description
+						//do_action( 'woocommerce_archive_description' );
 						?>
+
                     </header>
                     <?php ?>
 					<?php
@@ -90,8 +94,13 @@ get_header( 'shop' );
 						 * @hooked woocommerce_result_count - 20
 						 * @hooked woocommerce_catalog_ordering - 30
 						 */
+                        ?>
+                    <div class="store-filter clearfix">
+                            <?php
 						do_action( 'woocommerce_before_shop_loop' );
-
+                     ?>
+                    </div>
+                     <?php
 						woocommerce_product_loop_start();
 
 						if ( wc_get_loop_prop( 'total' ) ) {
@@ -140,6 +149,7 @@ get_header( 'shop' );
         <!-- /container -->
     </div>
     <!-- /section -->
+
 <?php
 get_footer( 'shop' );
 
