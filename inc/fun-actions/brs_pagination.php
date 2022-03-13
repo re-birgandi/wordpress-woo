@@ -1,5 +1,5 @@
 <?php
-function brs_pagination(){
+function brs_pagination() {
 	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
 		return;
 	}
@@ -15,19 +15,22 @@ function brs_pagination(){
 		$args['format'] = '';
 		$args['base']   = esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
 	}
-  ?>
-	<div class="pull-left">
+
+	?>
+    <div class="pull-left">
         <div class="page-filter">
             <span class="text-uppercase">نمایش:</span>
-            <select class="input">
-                <option  value="0">10</option>
-                <option value="1">20</option>
-                <option value="2">30</option>
-            </select>
+            <form method="get" class="form-per-page">
+                <select class="input select-per-page">
+					<?php foreach ( PER_PAGES as $key => $item ): ?>
+                        <option ></option>
+                    <?php endforeach; ?>
+                </select>
+            </form>
         </div>
-<?php
-	wc_get_template( 'loop/pagination.php', $args );
-	?>
-	</div>
 		<?php
+		wc_get_template( 'loop/pagination.php', $args );
+		?>
+    </div>
+	<?php
 }
