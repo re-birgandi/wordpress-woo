@@ -1,6 +1,10 @@
- 
+ .coustom-orderby{
+     margin-left: 5px;
+     vertical-align: -9px;
+ }
 ul.store-pages li{
     width: 9%
+
 }
 @media only screen and (max-width: 314px) {
     .coustom-orderby {

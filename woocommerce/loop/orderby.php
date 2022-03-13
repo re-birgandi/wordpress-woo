@@ -18,20 +18,20 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
- ?>
+
+?>
 <div class="pull-right">
     <div class="sort-filter">
         <span class="text-uppercase coustom-orderby">مرتب سازی بر اساس:</span>
-        <form  style="display: inline-block;" method="get">
-            <select name="orderby" class=" input" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+        <form style="display: inline-block;" class="woocommerce-ordering" method="get">
+            <select name="orderby" class="orderby input" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
 				<?php foreach ( $catalog_orderby_options as $id => $name ) :
-                    //مرتب‌سازی بر اساس
-					$pattern = '/مرتب‌سازی بر اساس/i';
-					$name =preg_replace($pattern, '', $name);
+                    $pattern = '/مرتب‌سازی بر اساس/i';
+					$name = preg_replace( $pattern, '', $name );
 					$pattern2 = '/مرتب‌سازی/i';
-					$name =preg_replace($pattern2, '', $name);
-                    ?>
-                    <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+					$name = preg_replace( $pattern2, '', $name ); ?>
+                    <option value="<?php echo esc_attr( $id ); ?>"
+						<?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
 				<?php endforeach; ?>
             </select>
             <input type="hidden" name="paged" value="1"/>
