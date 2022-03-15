@@ -2,17 +2,41 @@
     margin-left: 5px;
     vertical-align: -9px;
 }
-.select-per-page{
+
+.select-per-page {
     width: 81% !important;
 }
+
 ul.store-pages li {
     width: 9%
 
 }
-.form-per-page{
+
+.form-per-page {
     display: inline-block;
 }
 
+/*-------------pagination--------------*/
+.new-pull-left { /*---------change name class pull-left--------------*/
+    display: block;
+    float: none !important;
+    margin-bottom: 10px;
+}
+
+.new-store-pages { /*---------change name class store-pages--------------*/
+
+      margin-top: 8px ;
+}
+
+.new-store-pages li { /*---------store-pages li --------------*/
+    display: inline-block !important;
+    width: 4% !important;
+    margin: 0 !important;
+}
+.new-store-pages li.active {
+    color: #F8694A;
+}
+/*-------------pagination--------------*/
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;

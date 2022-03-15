@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$total   = isset( $total ) ? $total : wc_get_loop_prop( 'total_pages' );
+$total = isset( $total ) ? $total : wc_get_loop_prop( 'total_pages' );
 
 $current = isset( $current ) ? $current : wc_get_loop_prop( 'current_page' );
 $base    = isset( $base ) ? $base : esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
@@ -31,26 +31,35 @@ if ( $total <= 1 ) {
 
 ?>
 
-<div class="woocommerce-pagination" style="display: inline-block">
-	<?php
-	$paginate_links = paginate_links(
-		apply_filters(
-			'woocommerce_pagination_args',
-			array( // WPCS: XSS ok.
-				'base'      => $base,
-				'format'    => $format,
-				'add_args'  => false,
-				'current'   => max( 1, $current ),
-				'total'     => $total,
-				'prev_text' => is_rtl() ? '<i class="fa-solid fa-caret-right"></i>' : '<i class="fa-solid fa-caret-left"></i>',
-				'next_text' => is_rtl() ? '<i class="fa-solid fa-caret-left"></i>' : '<i class="fa-solid fa-caret-right"></i>',
-				'type'      => 'list',
-				'end_size'  => 3,
-				'mid_size'  => 3,
-			)
+
+<?php
+
+$paginate_links = paginate_links(
+	apply_filters(
+		'woocommerce_pagination_args',
+		array( // WPCS: XSS ok.
+			'base'      => $base,
+			'format'    => $format,
+			'add_args'  => false,
+			'current'   => max( 1, $current ),
+			'total'     => $total,
+			'prev_text' => is_rtl() ? '<i class="fa-solid fa-caret-right"></i>' : '<i class="fa-solid fa-caret-left"></i>',
+			'next_text' => is_rtl() ? '<i class="fa-solid fa-caret-left"></i>' : '<i class="fa-solid fa-caret-right"></i>',
+			'type'      => 'list',
+			'end_size'  => 3,
+			'mid_size'  => 3,
 		)
-	);
+	)
+);
+if ( $total <= 5 ):
 	$paginate_links = str_replace( "page-numbers", 'store-pages', $paginate_links );
 	echo $paginate_links;
-	?>
-</div>
+endif;
+
+if ( $total > 5 ):
+	$paginate_links = str_replace( "page-numbers", 'new-store-pages', $paginate_links );
+	echo $paginate_links;
+endif;
+
+
+?>

@@ -16,19 +16,28 @@ function brs_pagination() {
 		$args['base']   = esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
 	}
 
+	$pull_left = $args['total'] > 5 ? 'new-pull-left' : 'pull-left';
+
 	?>
-    <div class="pull-left">
+    <div class="<?php echo $pull_left;?>">
         <div class="page-filter">
             <span class="text-uppercase">نمایش:</span>
             <form method="get" class="form-per-page">
-                <select class="input select-per-page">
-					<?php foreach ( PER_PAGES as $key => $item ): ?>
-                        <option ></option>
-                    <?php endforeach; ?>
+                <select name="select_per_page" class="input select-per-page">
+					<?php foreach ( PER_PAGES as $key => $item ):
+                          ?>
+                        <option <?php selected( PER_PAGES[ $key ], sanitize_text_field( $_GET['per_page'] ) ) ?>
+                                value="<?php echo add_query_arg( array(
+									'per_page' => PER_PAGES[ $key ]
+								) ); ?>">
+							<?php echo PER_PAGES[ $key ] ?></option>
+					<?php endforeach; ?>
                 </select>
             </form>
         </div>
+
 		<?php
+
 		wc_get_template( 'loop/pagination.php', $args );
 		?>
     </div>

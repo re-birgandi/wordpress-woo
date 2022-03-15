@@ -1,6 +1,8 @@
 <?php
 //CONST VALUES
-const PER_PAGES = [ 'ten'=>10, 'twenty'=>20, 'thirty'=>30, 'all'=>'کل محصولات'];
+const PER_PAGES = ['ten'=>10, 'twenty'=>20, 'thirty'=>30, 'all'=>'کل محصولات'];
+const DEFAULT_PER_PAGE = 10;
+
 
 //CONST  DIR
 define( 'BRS_DIR_TH', get_template_directory() );
@@ -26,7 +28,7 @@ include BRS_DIR_FUN_ACTIONS . 'brs_pagination.php';
 
 
 //INCLUDE FILTERS
-
+include     BRS_DIR_FUN_FILTERS."brs_loop_shop_per_page.php";
 
 
 
@@ -43,15 +45,5 @@ add_action('woocommerce_before_shop_loop','brs_pagination');
 
 //FILTERS
 add_filter( 'woocommerce_show_page_title', '__return_false' );
+add_filter( 'loop_shop_per_page', 'brs_loop_shop_per_page', 20 );
 
-
-add_action('pre_get_posts', 'tf_change_products_query_for_page');
-
-function tf_change_products_query_for_page($query) {
-
-	$perPage = filter_input(INPUT_GET, 'perpage', FILTER_SANITIZE_NUMBER_INT);
-
-	if ( $query->is_main_query() && !is_admin() && is_post_type_archive('product') ) :
-		$query->set('posts_per_page', $perPage);
-	endif;
-}
