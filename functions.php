@@ -1,7 +1,8 @@
 <?php
 //CONST VALUES
-const PER_PAGES = ['ten'=>10, 'twenty'=>20, 'thirty'=>30, 'all'=>'کل محصولات'];
 const DEFAULT_PER_PAGE = 10;
+const PER_PAGES = ['default'=>DEFAULT_PER_PAGE, 'twenty'=>20, 'thirty'=>30, 'all'=>'کل محصولات'];
+
 
 
 //CONST  DIR
@@ -46,4 +47,3 @@ add_action('woocommerce_before_shop_loop','brs_pagination');
 //FILTERS
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 add_filter( 'loop_shop_per_page', 'brs_loop_shop_per_page', 20 );
-

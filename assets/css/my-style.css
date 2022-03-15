@@ -37,9 +37,19 @@ ul.store-pages li {
     color: #F8694A;
 }
 /*-------------pagination--------------*/
+
+@media only screen and (max-width: 558px) {
+    .new-store-pages li {
+        width: 6% !important;
+    }
+}
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;
         margin: 20px;
+
+    }
+    .new-store-pages li {
+        width: 12% !important;
     }
 }

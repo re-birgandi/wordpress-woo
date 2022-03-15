@@ -46,15 +46,15 @@ get_header( 'shop' );
             <div class="row">
 
                 <!-- ASIDE START SIDEBAR-->
-                 <div id="aside" class="col-md-3">
-	            <?php
-	            /**
-	             * Hook: woocommerce_sidebar.
-	             *
-	             * @hooked woocommerce_get_sidebar - 10
-	             */
-	            do_action( 'woocommerce_sidebar' );
-	            ?>
+                <div id="aside" class="col-md-3">
+					<?php
+					/**
+					 * Hook: woocommerce_sidebar.
+					 *
+					 * @hooked woocommerce_get_sidebar - 10
+					 */
+					do_action( 'woocommerce_sidebar' );
+					?>
                 </div>
                 <!-- /ASIDE END SIDEBAR-->
 
@@ -75,15 +75,15 @@ get_header( 'shop' );
 						/**TODO::category, tag, term, or author
 						 * @return void
 						 */
-                       ?>
+						?>
 
-                        <?php
-                        //TODO::DISABLE woocommerce_archive_description
+						<?php
+						//TODO::DISABLE woocommerce_archive_description
 						//do_action( 'woocommerce_archive_description' );
 						?>
 
                     </header>
-                    <?php ?>
+					<?php ?>
 					<?php
 					if ( woocommerce_product_loop() ) {
 
@@ -94,30 +94,37 @@ get_header( 'shop' );
 						 * @hooked woocommerce_result_count - 20
 						 * @hooked woocommerce_catalog_ordering - 30
 						 */
-                        ?>
-                    <div class="store-filter clearfix">
-                            <?php
-						do_action( 'woocommerce_before_shop_loop' );
-                     ?>
-                    </div>
-                     <?php
-						woocommerce_product_loop_start();
+						?>
+                        <div class="store-filter clearfix">
+							<?php
+							do_action( 'woocommerce_before_shop_loop' );
+							?>
+                        </div>
+                        <!------loop_start-------->
+                        <div id="store">
+                            <div class="row">
+								<?php
+								woocommerce_product_loop_start();
 
-						if ( wc_get_loop_prop( 'total' ) ) {
-							while ( have_posts() ) {
-								the_post();
+								if ( wc_get_loop_prop( 'total' ) ) {
+									while ( have_posts() ) {
+										the_post();
 
-								/**
-								 * Hook: woocommerce_shop_loop.
-								 */
-								do_action( 'woocommerce_shop_loop' );
+										/**
+										 * Hook: woocommerce_shop_loop.
+										 */
+										do_action( 'woocommerce_shop_loop' );
 
-								wc_get_template_part( 'content', 'product' );
-							}
-						}
+										wc_get_template_part( 'content', 'product' );
+									}
+								}
 
-						woocommerce_product_loop_end();
-
+								woocommerce_product_loop_end();
+								?>
+                            </div>
+                        </div>
+                        <!------loop_end-------->
+						<?php
 						/**
 						 * Hook: woocommerce_after_shop_loop.
 						 *
