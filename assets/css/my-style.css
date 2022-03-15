@@ -38,6 +38,19 @@ ul.store-pages li {
 }
 /*-------------pagination--------------*/
 
+
+/*-------------content product--------------*/
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:stretch
+
+}
+.row.display-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: row ;
+}
+/*-------------content product--------------*/
 @media only screen and (max-width: 558px) {
     .new-store-pages li {
         width: 6% !important;
@@ -53,3 +66,4 @@ ul.store-pages li {
         width: 12% !important;
     }
 }
+

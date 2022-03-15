@@ -102,15 +102,15 @@ get_header( 'shop' );
                         </div>
                         <!------loop_start-------->
                         <div id="store">
-                            <div class="row">
+                            <div class="row  display-flex">
 								<?php
 								woocommerce_product_loop_start();
 
 								if ( wc_get_loop_prop( 'total' ) ) {
+
 									while ( have_posts() ) {
 										the_post();
-
-										/**
+                                        /**
 										 * Hook: woocommerce_shop_loop.
 										 */
 										do_action( 'woocommerce_shop_loop' );
