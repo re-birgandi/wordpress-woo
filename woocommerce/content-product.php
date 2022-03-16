@@ -23,8 +23,6 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-global $i;
-$i = $i + 1;
 
 
 ?>

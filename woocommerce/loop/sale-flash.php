@@ -18,15 +18,22 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
-global $post, $product;
-
+global $product;
 ?>
-<?php if ( $product->is_on_sale() ) : ?>
-
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
-
+<div class="product-label">
 	<?php
-endif;
+	if ( function_exists( 'brs_offer_new_product' ) && brs_offer_new_product() ):
+		echo '<span>جدید</span>';
+	endif;
 
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+	global $post, $product;
+	if ( $product->is_on_sale() ) : ?>
+		<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="sale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+	<?php
+	endif;
+	?>
+</div>
+<!------------ TODO : ZOOM PRODUCT IN مشاهده سریع-------------------->
+<button class="main-btn quick-view"><i class="fa fa-search-plus"></i><a href="<?php the_permalink( GET_the_ID() ); ?>">مشاهده
+        سریع</a></button>
+
