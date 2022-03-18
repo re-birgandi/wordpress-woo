@@ -14,20 +14,27 @@ https://emacs.ir/
 
 @font-face {
     font-family: 'IRANSansWeb';
-    src: url(../fonts/IRANSansWeb.eot);
-    src: url(../fonts/IRANSansWeb.eot#iefix) format('embedded-opentype'), url(../fonts/IRANSansWeb.woff2) format('woff2'), url(../fonts/IRANSansWeb.woff) format('woff'), url(../fonts/IRANSansWeb.ttf) format('truetype'), url(../fonts/IRANSansWeb.svg#IRANSansWeb) format('svg')
-}
+    src: url(../fonts/Shabnam-FD.eot);
+    src: url(../fonts/Shabnam-Light-FD.eot) ,
+    url(../fonts/Shabnam-FD.woff) format('woff'),
+    url(../fonts/Shabnam-Bold-FD.woff2) format('woff2'),
+    url(../fonts/Shabnam-FD.ttf) format('truetype');}
 
 @font-face {
     font-family: 'IRANSansWebFaNum';
-    src: url(../fonts/fonts/eot/IRANSansWebFaNum.eot);
-    src: url(../fonts/fonts/eot/IRANSansWebFaNum.eot) format('embedded-opentype'), url(../fonts/fonts/woff2/IRANSansWebFaNum.woff2) format('woff2'), url(../fonts/fonts/woff/IRANSansWebFaNum.woff) format('woff'), url(../fonts/fonts/ttf/IRANSansWebFaNum.ttf) format('truetype'), url(../fonts/fonts/eot/IRANSansWebFaNum.svg) format('svg')
+    src: url(../fonts/Shabnam-FD.eot);
+    src: url(../fonts/Shabnam-Light-FD.eot) ,
+    url(../fonts/Shabnam-FD.woff) format('woff'),
+    url(../fonts/Shabnam-Light-FD.woff2) format('woff2'),
+    url(../fonts/Shabnam-FD.ttf) format('truetype');
+
 }
+
 
 * {
     padding: 0;
     margin: 0;
-    font-family: 'IRANSansWebFaNum';
+
 }
 
 body {

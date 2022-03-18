@@ -16,12 +16,24 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directlyfff
 }
 
 global $product;
 ?>
-
-<?php if ( $price_html = $product->get_price_html() ) : ?>
-	<span class="price"><?php echo $price_html; ?></span>
+<h3 class="product-price">
+	<?php if ( $price_html = $product->get_price_html() ) :
+    $price_html=str_replace('<del aria-hidden="true">','<del class="product-old-price">',$price_html);
+	$price_html = str_replace( [
+		'<span class="woocommerce-Price-amount amount">',
+		'</span>',
+		'<span class="woocommerce-Price-currencySymbol">',
+		'<bdi>',
+		'</bdi>',
+		'<ins>',
+		'</ins>'
+	], '', $price_html )
+	?>
+	<?php echo $price_html; ?>
+</h3>
 <?php endif; ?>

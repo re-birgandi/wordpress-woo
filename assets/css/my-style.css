@@ -18,14 +18,13 @@ ul.store-pages li {
 
 /*-------------pagination--------------*/
 .new-pull-left { /*---------change name class pull-left--------------*/
-    display: block;
+    display: block ;
     float: none !important;
     margin-bottom: 10px;
 }
 
 .new-store-pages { /*---------change name class store-pages--------------*/
-
-      margin-top: 8px ;
+       margin-top: 8px ;
 }
 
 .new-store-pages li { /*---------store-pages li --------------*/

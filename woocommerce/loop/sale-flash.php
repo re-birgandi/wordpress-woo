@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 global $product;
+
 ?>
 <div class="product-label">
 	<?php
@@ -34,6 +35,6 @@ global $product;
 	?>
 </div>
 <!------------ TODO : ZOOM PRODUCT IN مشاهده سریع-------------------->
-<button class="main-btn quick-view"><i class="fa fa-search-plus"></i><a href="<?php the_permalink( GET_the_ID() ); ?>">مشاهده
+<button class="main-btn quick-view"><i class="fa fa-search-plus"></i><a href="<?php the_permalink( get_the_ID() ); ?>">مشاهده
         سریع</a></button>
 

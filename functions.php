@@ -39,8 +39,10 @@ include FUN_CUSTOM . 'brs_active_plugin.php';
 
 //REMOVE ACTIONS
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-
-
+remove_action('woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title', 10);//TODO: REMOVE TITTLE PRODUCT
+remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5);//TODO: REMOVE RATING PRODUCT
+remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
+remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
 
 //ACTIONS
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );

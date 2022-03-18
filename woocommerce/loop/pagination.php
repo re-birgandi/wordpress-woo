@@ -60,6 +60,7 @@ if ( $total > 5 ):
 	$paginate_links = str_replace( "page-numbers", 'new-store-pages', $paginate_links );
 	echo $paginate_links;
 endif;
-
-
+//TODO::EDIT
+/*$paginate_links = str_replace( "page-numbers", 'store-pages', $paginate_links );
+echo $paginate_links;*/
 ?>
