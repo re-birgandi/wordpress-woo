@@ -53,7 +53,9 @@ ul.store-pages li {
 
 /*-------------rating-product--------*/
 .rating-product{
-  margin:   5px 0 19px 13px
+    flex: none;
+    margin-bottom: 17px !important;
+    margin-top: 5px;
 }
 .star-rating span:before,
 .star-rating::before,
@@ -64,13 +66,15 @@ p.stars a:after {
 .primary-btn.add-to-cart:hover {
     background: #eeb8af !important;
 }
+.product-btns{
+    display: flex !important;
+    align-items:stretch;
+}
+.product-btns button{
+    flex: content;
+}
 /*-------------rating-product-------*/
 
-@media only screen and (max-width: 558px) {
-    .new-store-pages li {
-        width: 6% !important;
-    }
-}
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;
@@ -82,3 +86,13 @@ p.stars a:after {
     }
 }
 
+@media only screen and (max-width: 558px) {
+    .new-store-pages li {
+        width: 6% !important;
+    }
+}
+@media only screen and (max-width: 922px) {
+    .rating-product{
+        margin-bottom: 25px;
+    }
+}

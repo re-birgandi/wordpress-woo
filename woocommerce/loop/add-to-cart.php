@@ -20,10 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+
  ?>
 	<div class="product-btns">
-		<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-		<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
 <?php
 //echo esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' );//TODO::CHECKED
 echo apply_filters(
