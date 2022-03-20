@@ -28,6 +28,7 @@ include BRS_DIR_FUN_ACTIONS . 'brs_register_sidebars.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_pagination.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_product_title.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_add_to_cart.php';
+include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_rating.php';
 
 
 //INCLUDE FILTERS
@@ -42,7 +43,7 @@ include FUN_CUSTOM . 'brs_active_plugin.php';
 //REMOVE ACTIONS
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action('woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title', 10);//TODO: REMOVE TITTLE PRODUCT
-remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5);//TODO: REMOVE RATING PRODUCT
+remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5);
 remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart', 10);//TODO: REMOVE ADD TO CART
@@ -53,7 +54,9 @@ add_action( 'widgets_init', 'brs_register_sidebars' );
 add_action( 'woocommerce_before_shop_loop', 'brs_pagination', 10);//pagination top
 add_action('woocommerce_after_shop_loop_item','brs_template_loop_product_title', 10);//title product
 add_action('woocommerce_after_shop_loop_item', 'brs_template_loop_add_to_cart', 10);
+add_action('woocommerce_after_shop_loop_item','brs_template_loop_rating',10);
 //FILTERS
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 add_filter( 'loop_shop_per_page', 'brs_loop_shop_per_page', 20 );
 add_filter( 'image_size_names_choose', 'brs_custom_sizes' );
+

@@ -50,6 +50,22 @@ ul.store-pages li {
     flex-direction: row ;
 }
 /*-------------content product------ Equal height  col --------*/
+
+/*-------------rating-product--------*/
+.rating-product{
+  margin:   5px 0 19px 13px
+}
+.star-rating span:before,
+.star-rating::before,
+p.stars a:hover:after,
+p.stars a:after {
+    color: #ea7963 !important;
+   }
+.primary-btn.add-to-cart:hover {
+    background: #eeb8af !important;
+}
+/*-------------rating-product-------*/
+
 @media only screen and (max-width: 558px) {
     .new-store-pages li {
         width: 6% !important;
