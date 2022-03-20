@@ -19,6 +19,7 @@ const BRS_URL_ASSETS = BRS_URL_TH . 'assets/';
 const BRS_URL_CSS    = BRS_URL_ASSETS . 'css/';
 const BRS_URL_JS     = BRS_URL_ASSETS . 'js/';
 const BRS_URL_IMG    = BRS_URL_ASSETS . 'img/';
+const BRS_URL_AJAX    = BRS_URL_JS . 'ajax/';
 
 
 //INCLUDE ACTIONS
@@ -29,6 +30,7 @@ include BRS_DIR_FUN_ACTIONS . 'brs_pagination.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_product_title.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_add_to_cart.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_rating.php';
+include BRS_DIR_FUN_ACTIONS . 'brs_initialization.php';
 
 
 //INCLUDE FILTERS
@@ -48,6 +50,7 @@ remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_pro
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart', 10);//TODO: REMOVE ADD TO CART
 //ACTIONS
+add_action('init','brs_initialization');
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );
 add_action( 'after_setup_theme', 'brs_after_setup_theme' );
 add_action( 'widgets_init', 'brs_register_sidebars' );

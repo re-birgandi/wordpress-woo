@@ -20,17 +20,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
-
  ?>
 	<div class="product-btns">
-        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+		<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+		<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
 <?php
 //echo esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' );//TODO::CHECKED
 echo apply_filters(
 	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
 	sprintf(
-		'<button class="primary-btn add-to-cart"><a href="%s" data-quantity="%s"   %s><i class="fa fa-shopping-cart"></i>%s</a></button>',
+		'<button class="primary-btn add-to-cart"  ><a href="%s" data-quantity="%s"   %s><i class="fa fa-shopping-cart"></i>%s</a></button>',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
