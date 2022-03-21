@@ -52,7 +52,7 @@ h6 {
     color: #30323A;
     margin: 0 0 10px;
     font-weight: 700;
-    font-family: 'IRANSansWeb', 'IRANSansWebFaNum';
+    font-family: 'IRANSansWeb', 'IRANSansWebFaNum', sans-serif;
 }
 
 a {
@@ -70,7 +70,7 @@ a:focus {
 
 p,
 p strong {
-    font-family: 'IRANSansWeb';
+    font-family: 'IRANSansWeb', sans-serif;
 }
 
 .primary-color {
@@ -82,7 +82,7 @@ p strong {
 }
 
 .font-Number {
-    font-family: 'IRANSansWebFaNum';
+    font-family: 'IRANSansWebFaNum', sans-serif;
 }
 
 .font-weak {
@@ -128,7 +128,7 @@ hr {
     border: none;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
-    font-family: 'IRANSansWeb';
+    font-family: 'IRANSansWeb', sans-serif;
 }
 
 .icon-btn.main-btn,
@@ -947,7 +947,7 @@ textarea.input {
 .product .product-old-price {
     color: #F8694A;
     font-size: 90%;
-    font-family: 'IRANSansWebFaNum';
+    font-family: 'IRANSansWebFaNum', sans-serif;
 }
 
 .product .product-rating {
@@ -970,13 +970,13 @@ textarea.input {
     font-weight: 700;
     color: #FFF;
     background-color: #30323A;
-    font-family: 'IRANSansWeb';
+    font-family: 'IRANSansWeb', sans-serif;
     z-index: 22;
 }
 
 .product .product-label>span.sale {
     background-color: #F8694A;
-    font-family: 'IRANSansWebFaNum';
+    font-family: 'IRANSansWebFaNum', sans-serif;
     font-size: 14px;
     direction: rtl;
 }
@@ -1103,7 +1103,7 @@ textarea.input {
 .product.product-single .product-price {
     display: inline-block;
     font-size: 19px;
-    font-family: 'IRANSansWebFaNum', 'IRANSansWeb'
+    font-family: 'IRANSansWebFaNum', 'IRANSansWeb', sans-serif;
 }
 
 .product.product-single .product-rating {
@@ -1114,7 +1114,7 @@ textarea.input {
 .product.product-single .product-name {
     font-size: 16px;
     opacity: 0.7;
-    font-family: 'IRANSansWeb' !important;
+    font-family: 'IRANSansWeb', sans-serif !important;
 }
 
 .product.product-single .product-btns {
@@ -1123,7 +1123,7 @@ textarea.input {
     visibility: hidden;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
-    font-family: 'IRANSansWeb' !important;
+    font-family: 'IRANSansWeb', sans-serif !important;
 }
 
 .product.product-single:hover .product-btns {
@@ -1176,17 +1176,17 @@ textarea.input {
 .product.product-widget .product-price {
     font-size: 14px;
     margin-bottom: 5px;
-    font-family: 'IRANSansWebFaNum', 'IRANSansWeb';
+    font-family: 'IRANSansWebFaNum', 'IRANSansWeb', sans-serif;
 }
 
 .product.product-widget .product-price .qty {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'IRANSansWebFaNum', 'IRANSansWeb';
+    font-family: 'IRANSansWebFaNum', 'IRANSansWeb', sans-serif;
 }
 
 .product-price {
-    font-family: 'IRANSansWebFaNum', 'IRANSansWeb';
+    font-family: 'IRANSansWebFaNum', 'IRANSansWeb', sans-serif;
 }
 
 
@@ -1196,7 +1196,7 @@ textarea.input {
 
 .product.product-widget .product-name {
     font-size: 13px;
-    font-family: 'IRANSansWeb' !important;
+    font-family: 'IRANSansWeb', sans-serif !important;
 }
 
 .product.product-widget .cancel-btn {
@@ -1404,18 +1404,18 @@ textarea.input {
 }
 
 .page-filter select {
-    font-family: 'IRANSansWebFaNum' !important;
+    font-family: 'IRANSansWebFaNum', sans-serif !important;
     direction: rtl;
 }
 
 .page-filter select.input {
     width: 90px;
-    font-family: 'IRANSansWebFaNum' !important;
+    font-family: 'IRANSansWebFaNum' , sans-serif !important;
 }
 
 .page-filter {
     display: inline-block;
-    font-family: 'IRANSansWebFaNum' !important;
+    font-family: 'IRANSansWebFaNum', sans-serif !important;
 }
 
 .store-pages {
@@ -1558,7 +1558,7 @@ textarea.input {
 }
 
 .product.product-details .qty-input span {
-    font-family: 'IRANSansWeb', 'IRANSansWebFaNum';
+    font-family: 'IRANSansWeb', 'IRANSansWebFaNum', sans-serif;
 }
 
 
@@ -1591,7 +1591,7 @@ textarea.input {
     font-weight: 700;
     padding-bottom: 15px;
     font-size: 18px;
-    font-family: 'IRANSansWebFaNum', 'IRANSansWeb';
+    font-family: 'IRANSansWebFaNum', 'IRANSansWeb', sans-serif;
     color: #000;
     opacity: 0.7;
     /* menu-nav .menu-list */
@@ -2053,7 +2053,7 @@ textarea.input {
     font-size: 2.2rem;
     color: #444;
     margin-bottom: 10px;
-    font-family: 'IRANSansWeb', 'IRANSansWebFaNum';
+    font-family: 'IRANSansWeb', 'IRANSansWebFaNum', sans-serif;
 }
 
 .signin-signup .input-field {
@@ -2083,14 +2083,14 @@ textarea.input {
     font-weight: 600;
     font-size: 1.1rem;
     color: #333;
-    font-family: 'IRANSansWeb', 'IRANSansWebFaNum';
+    font-family: 'IRANSansWeb', 'IRANSansWebFaNum', sans-serif;
 }
 
 .signin-signup .input-field input::placeholder {
     color: #aaa;
     font-weight: 700;
     font-size: 16px;
-    font-family: 'IRANSansWeb', 'IRANSansWebFaNum';
+    font-family: 'IRANSansWeb', 'IRANSansWebFaNum', sans-serif;
 }
 
 .signin-signup .btn {
@@ -2106,7 +2106,7 @@ textarea.input {
     text-transform: uppercase;
     margin: 10px 0;
     transition: .5s;
-    font-family: 'IRANSansWeb', 'IRANSansWebFaNum';
+    font-family: 'IRANSansWeb', 'IRANSansWebFaNum', sans-serif;
 }
 
 .signin-signup .btn:hover {

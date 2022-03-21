@@ -24,8 +24,8 @@ if ( ! function_exists( 'brs_enqueue_scripts' ) ):
 	}
 endif;
 
-function brs_scripts_ajax_shop(){
-	if(brs_active_plugin('woocommerce/woocommerce.php') && is_shop()):
+function brs_scripts_ajax_shop() {
+	if ( brs_active_plugin( 'woocommerce/woocommerce.php' ) && is_shop() ):
 		wp_enqueue_script( 'brs-ajax-main-page', BRS_URL_AJAX . 'ajax-main-page.js', '', VERSION_FILE, true );
 		wp_localize_script( 'brs-ajax-main-page', 'brs_ajax_handel', [
 				'brs_ajax_url' => admin_url( 'admin-ajax.php' ),

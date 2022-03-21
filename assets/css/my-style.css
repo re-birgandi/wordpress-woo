@@ -24,7 +24,7 @@ ul.store-pages li {
 }
 
 .new-store-pages { /*---------change name class store-pages--------------*/
-       margin-top: 8px ;
+    margin-top: 8px ;
 }
 
 .new-store-pages li { /*---------store-pages li --------------*/
@@ -62,7 +62,7 @@ ul.store-pages li {
 p.stars a:hover:after,
 p.stars a:after {
     color: #ea7963 !important;
-   }
+}
 .primary-btn.add-to-cart:hover {
     background: #eeb8af !important;
 }
@@ -75,6 +75,11 @@ p.stars a:after {
 }
 /*-------------rating-product-------*/
 
+/*-------------icon cart and register user-------*/
+.header-btns-icon .fa.fa-user-o,.header-btns-icon .fa.fa-shopping-cart{
+    padding-top: 10px;
+}
+/*-------------icon cart and register user-------*/
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;
