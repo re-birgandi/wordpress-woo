@@ -3,7 +3,7 @@
 const DEFAULT_PER_PAGE = 10;
 const PER_PAGES        = [ 'default' => DEFAULT_PER_PAGE, 'twenty' => 20, 'thirty' => 30, 'all' => 'کل محصولات' ];
 const BRS_PLUGIN_ACTIVE      = 'wordpress-woo-pl/wordpress-woo-pl.php';
-
+const BRS_TYPE_PRODUCT = ['variable' => 'variable'];
 //CONST  DIR
 define( 'BRS_DIR_TH', get_template_directory() );
 const BRS_DIR_INC         = BRS_DIR_TH . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
@@ -33,7 +33,8 @@ include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_add_to_cart.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_rating.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_initialization.php';
 
-
+//INCLUDE AJAX ACTION
+include BRS_FUN_AJAX.'brs_add_cart_shop.php';
 //INCLUDE FILTERS
 include BRS_DIR_FUN_FILTERS . "brs_loop_shop_per_page.php";
 include BRS_DIR_FUN_FILTERS . "brs_custom_sizes.php";
@@ -63,8 +64,8 @@ add_action('woocommerce_after_shop_loop_item', 'brs_template_loop_add_to_cart', 
 add_action('woocommerce_after_shop_loop_item','brs_template_loop_rating',10);
 
 //ACTIONS AJAX TODO:ADD FUNCTION brs_add_cart_shop AND INCLUDE GET TYPE PRODUCT IN JS
-//add_action('wp_ajax_brs_add_cart_shop', 'brs_add_cart_shop');
-//add_action('wp_ajax_nopriv_brs_add_cart_shop', 'brs_add_cart_shop');
+add_action('wp_ajax_brs_add_cart_shop', 'brs_add_cart_shop');
+add_action('wp_ajax_nopriv_brs_add_cart_shop', 'brs_add_cart_shop');
 
 
 //FILTERS

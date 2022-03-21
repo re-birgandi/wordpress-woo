@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
- ?>
+  ?>
     <div class="product-btns">
         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -30,14 +30,15 @@ global $product;
 			'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
 			sprintf(
 				'<button class="primary-btn add-to-cart"   >
-                       <a data-type-product="%s" href="%s" data-quantity="%s" %s class="add-cart">
+                       <a data-type-product="%s" href="%s" data-quantity="%s" %s class="%s">
                        <i class="fa fa-shopping-cart"></i>%s</a></button>',
 				esc_html( $product->get_type() ),
 				esc_url( $product->add_to_cart_url() ),
 				esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
 				isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+				$product->is_purchasable()
+				&& $product->is_in_stock() && $product->get_type() != BRS_TYPE_PRODUCT['variable'] ? 'add-cart' : '',
 				esc_html( $product->add_to_cart_text() ),
-
 			),
 			$product,
 			$args

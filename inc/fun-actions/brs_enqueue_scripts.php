@@ -28,8 +28,8 @@ function brs_scripts_ajax_shop() {
 	if ( brs_active_plugin( 'woocommerce/woocommerce.php' ) && is_shop() ):
 		wp_enqueue_script( 'brs-ajax-main-page', BRS_URL_AJAX . 'ajax-main-page.js', '', VERSION_FILE, true );
 		wp_localize_script( 'brs-ajax-main-page', 'brs_ajax_handel', [
-				'brs_ajax_url' => admin_url( 'admin-ajax.php' ),
-				'brs_nonce'    => wp_create_nonce( 'brs_nonce' ),
+				 'brs_ajax_url' => admin_url( 'admin-ajax.php' ),
+				 'brs_create_nonce'    => wp_create_nonce( 'brs_nonce' ),
 			]
 		);
 	endif;
