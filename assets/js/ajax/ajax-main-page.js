@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
         let product_sku = $(this).data('product_sku');
         $.ajax({
             type: 'POST',
-             url: brs_ajax_handel.brs_ajax_url,
+            url: brs_ajax_handel.brs_ajax_url,
             datatype: "json",
             data: {
                 action: "brs_add_cart_shop",
@@ -16,18 +16,25 @@ jQuery(document).ready(function ($) {
                 quantity: quantity,
                 product_id: product_id,
                 product_sku: product_sku,
-                brs_get_nonce:brs_ajax_handel.brs_create_nonce
+                brs_get_nonce: brs_ajax_handel.brs_create_nonce
 
             },
             success: function (response) {
-             //   var fragments = response.fragments;
-                   console.log('success',response )
-             //   $('.massage').html('').show().html(response.massage).hide(3000);
+                //   var fragments = response.fragments;
+                if (typeof response.fragments !== "undefined") {
+                    //TODO:اگر پلاگین فعال نباشد با این قسمت کار می شود
+                   //  console.log('success fragments', response.fragments )
+                }
+                if (typeof response.massage !== "undefined") {
+                    console.log('success massage', response. massage )
+                }
+
+                //   $('.massage').html('').show().html(response.massage).hide(3000);
 
 
             },
             error: function (error) {
-            console.log('error',error)
+                console.log('error', error)
 
             }
         })
