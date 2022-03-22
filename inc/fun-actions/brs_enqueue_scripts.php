@@ -20,7 +20,7 @@ if ( ! function_exists( 'brs_enqueue_scripts' ) ):
 		wp_enqueue_script( 'brs-kit-fontawesome', BRS_URL_JS . 'fontawesome.js', '', VERSION_FILE );
 
 		//AJAX
-		brs_scripts_ajax_shop();
+	 brs_scripts_ajax_shop();
 	}
 endif;
 

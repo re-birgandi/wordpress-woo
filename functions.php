@@ -4,6 +4,9 @@ const DEFAULT_PER_PAGE = 10;
 const PER_PAGES        = [ 'default' => DEFAULT_PER_PAGE, 'twenty' => 20, 'thirty' => 30, 'all' => 'کل محصولات' ];
 const BRS_PLUGIN_ACTIVE      = 'wordpress-woo-pl/wordpress-woo-pl.php';
 const BRS_TYPE_PRODUCT = ['variable' => 'variable'];
+
+
+
 //CONST  DIR
 define( 'BRS_DIR_TH', get_template_directory() );
 const BRS_DIR_INC         = BRS_DIR_TH . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
@@ -31,7 +34,6 @@ include BRS_DIR_FUN_ACTIONS . 'brs_pagination.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_product_title.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_add_to_cart.php';
 include BRS_DIR_FUN_ACTIONS . 'brs_template_loop_rating.php';
-include BRS_DIR_FUN_ACTIONS . 'brs_initialization.php';
 
 //INCLUDE AJAX ACTION
 include BRS_FUN_AJAX.'brs_add_cart_shop.php';
@@ -54,7 +56,7 @@ remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_
 
 
 //ACTIONS
-add_action('init','brs_initialization');
+
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );
 add_action( 'after_setup_theme', 'brs_after_setup_theme' );
 add_action( 'widgets_init', 'brs_register_sidebars' );

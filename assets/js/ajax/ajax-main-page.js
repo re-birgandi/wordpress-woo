@@ -8,7 +8,8 @@ jQuery(document).ready(function ($) {
         let product_sku = $(this).data('product_sku');
         $.ajax({
             type: 'POST',
-            url: brs_ajax_handel.brs_ajax_url,
+             url: brs_ajax_handel.brs_ajax_url,
+            datatype: "json",
             data: {
                 action: "brs_add_cart_shop",
                 type_product: type_product,
@@ -18,12 +19,11 @@ jQuery(document).ready(function ($) {
                 brs_get_nonce:brs_ajax_handel.brs_create_nonce
 
             },
-            datatype: "json",
             success: function (response) {
-            //  console.log(response)
+             console.log(response)
             },
-            error: function (response) {
-             //   console.log(response)
+            error: function (error) {
+            console.log(error)
 
             }
         })
@@ -31,3 +31,4 @@ jQuery(document).ready(function ($) {
     })
 
 })
+
