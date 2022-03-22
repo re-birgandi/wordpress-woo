@@ -20,10 +20,14 @@ jQuery(document).ready(function ($) {
 
             },
             success: function (response) {
-             console.log(response)
+             //   var fragments = response.fragments;
+                   console.log('success',response )
+             //   $('.massage').html('').show().html(response.massage).hide(3000);
+
+
             },
             error: function (error) {
-            console.log(error)
+            console.log('error',error)
 
             }
         })

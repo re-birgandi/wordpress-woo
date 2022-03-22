@@ -78,7 +78,20 @@ p.stars a:after {
 /*-------------icon cart and register user-------*/
 .header-btns-icon .fa.fa-user-o,.header-btns-icon .fa.fa-shopping-cart{
     padding-top: 10px;
+
+    transition: width 2s ease, height 2s;
+
 }
+
+
+/*-------- massage add to cart--------------*/
+.massage{
+    position: fixed;
+
+    padding: 20px;
+   }
+
+/*----------massage add to cart------------*/
 /*-------------icon cart and register user-------*/
 @media only screen and (max-width: 314px) {
     .coustom-orderby {

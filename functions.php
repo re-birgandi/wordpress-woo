@@ -54,7 +54,6 @@ remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_pro
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart', 10);//TODO: REMOVE ADD TO CART
 
-
 //ACTIONS
 
 add_action( 'wp_enqueue_scripts', 'brs_enqueue_scripts' );
