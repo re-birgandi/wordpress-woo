@@ -43,6 +43,12 @@ global $product;
 			$product,
 			$args
 		);
+
+
 		?>
+
     </div>
-<?php
+    <div class="massage-add-cart"> </div>
+
+
+ <?php

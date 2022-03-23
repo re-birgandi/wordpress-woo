@@ -83,11 +83,7 @@ p.stars a:after {
 
 /*-------- massage add to cart--------------*/
 .massage-add-cart{
-    position: fixed;
-    width: 300px;
-    padding: 20px;
-    z-index: 9999999;
-
+    padding-top: 5px;
 }
 
 /*----------massage add to cart------------*/
