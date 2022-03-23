@@ -78,18 +78,17 @@ p.stars a:after {
 /*-------------icon cart and register user-------*/
 .header-btns-icon .fa.fa-user-o,.header-btns-icon .fa.fa-shopping-cart{
     padding-top: 10px;
-
-    transition: width 2s ease, height 2s;
-
-}
+ }
 
 
 /*-------- massage add to cart--------------*/
-.massage{
+.massage-add-cart{
     position: fixed;
-
+    width: 300px;
     padding: 20px;
-   }
+    z-index: 9999999;
+
+}
 
 /*----------massage add to cart------------*/
 /*-------------icon cart and register user-------*/

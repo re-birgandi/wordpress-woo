@@ -30,6 +30,7 @@ function brs_scripts_ajax_shop() {
 		wp_localize_script( 'brs-ajax-main-page', 'brs_ajax_handel', [
 				 'brs_ajax_url' => admin_url( 'admin-ajax.php' ),
 				 'brs_create_nonce'    => wp_create_nonce( 'brs_nonce' ),
+				 'brs_notification_add_cart' => __('به سبد خرید اضافه شد' , 'wordpress-woo')//translate
 			]
 		);
 	endif;

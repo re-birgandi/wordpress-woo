@@ -6,6 +6,7 @@ jQuery(document).ready(function ($) {
         let quantity = $(this).data('quantity');
         let product_id = $(this).data('product_id');
         let product_sku = $(this).data('product_sku');
+
         $.ajax({
             type: 'POST',
             url: brs_ajax_handel.brs_ajax_url,
@@ -20,21 +21,9 @@ jQuery(document).ready(function ($) {
 
             },
             success: function (response) {
-                //   var fragments = response.fragments;
-                if (typeof response.fragments !== "undefined") {
-                    //TODO:اگر پلاگین فعال نباشد با این قسمت کار می شود
-                   //  console.log('success fragments', response.fragments )
-                }
-                if (typeof response.massage !== "undefined") {
-                    console.log('success massage', response. massage )
-                }
-
-                //   $('.massage').html('').show().html(response.massage).hide(3000);
-
 
             },
             error: function (error) {
-                console.log('error', error)
 
             }
         })
