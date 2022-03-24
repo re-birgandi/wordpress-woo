@@ -1,8 +1,11 @@
 <?php
 if(! function_exists('brs_after_setup_theme')){
 	function brs_after_setup_theme(){
-
-		add_theme_support( 'custom-logo' );
+		$header_info = array(
+			'width'         => 155,
+			'height'        => 70,
+ 		);
+		 	add_theme_support( 'custom-logo', $header_info );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'custom-header' );
 		add_theme_support( 'woocommerce' );

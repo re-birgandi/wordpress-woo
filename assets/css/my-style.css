@@ -87,7 +87,22 @@ p.stars a:after {
 }
 
 /*----------massage add to cart------------*/
-/*-------------icon cart and register user-------*/
+select.search-categories {
+    width: 140px;
+    height: 35px;
+    padding: 4px;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px #999;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;
