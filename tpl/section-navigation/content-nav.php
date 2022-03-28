@@ -1,7 +1,4 @@
-<div id="navigation">
-    <!-- container -->
-    <div class="container">
-        <div id="responsive-nav">
+
             <!-- category nav -->
             <div class="category-nav show-on-click">
                 <span class="category-header">دسته بندی ها <i class="fa fa-list"></i></span>
@@ -224,12 +221,9 @@
 					'container'      => 'ul',
 					'menu_class'     => 'menu-list',
 					'menu_id'        => false,
-					'walker'         => brs_active_plugin( BRS_PLUGIN_ACTIVE ) ? new Brs_Menu_Navigation : ' '
+					'walker'         => brs_active_plugin( BRS_PLUGIN_ACTIVE ) ? new Brs_Menu_Navigation : ''
 				] )
 				?>
             </div>
             <!-- menu nav -->
-        </div>
-    </div>
-    <!-- /container -->
-</div>
+

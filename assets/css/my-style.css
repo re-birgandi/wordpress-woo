@@ -87,6 +87,9 @@ p.stars a:after {
 }
 
 /*----------massage add to cart------------*/
+
+/*---------search with category------------*/
+
 select.search-categories {
     width: 140px;
     height: 35px;
@@ -103,6 +106,13 @@ select.search-categories {
     appearance: none;
     cursor: pointer;
 }
+/*---------search with category------------*/
+
+/*---------image menu category------------*/
+.category-img {
+    height: 169px !important;
+}
+/*---------image menu category------------*/
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;
