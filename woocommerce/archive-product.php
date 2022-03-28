@@ -18,26 +18,15 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
+/**
+ * Hook: woocommerce_before_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ * @hooked WC_Structured_Data::generate_website_data() - 30
+ */
+do_action( 'woocommerce_before_main_content' );
 ?>
-    <!-- BREADCRUMB -->
-    <div id="breadcrumb">
-        <div class="container">
-			<?php
-			/**
-			 * Hook: woocommerce_before_main_content.
-			 *
-			 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-			 * @hooked woocommerce_breadcrumb - 20
-			 * @hooked WC_Structured_Data::generate_website_data() - 30
-			 */
-			do_action( 'woocommerce_before_main_content' );
-			?>
-			<?php ?>
-        </div>
-    </div>
-    <!-- /BREADCRUMB -->
-
-
     <!-- section -->
     <div class="section">
         <!-- container -->
@@ -110,7 +99,7 @@ get_header( 'shop' );
 
 									while ( have_posts() ) {
 										the_post();
-                                        /**
+										/**
 										 * Hook: woocommerce_shop_loop.
 										 */
 										do_action( 'woocommerce_shop_loop' );
