@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 	return;
 }
- 
+
 global $product;
 
 $attachment_ids = $product->get_gallery_image_ids();
