@@ -21,13 +21,44 @@ defined( 'ABSPATH' ) || exit;
 if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 	return;
 }
-
+ 
 global $product;
 
 $attachment_ids = $product->get_gallery_image_ids();
+if ( $attachment_ids && $product->get_image_id() ):
+	?>
+	<div id="main-slider" class="splide">
+		<div class="splide__track">
+			<ul class="splide__list">
+				<?php
+				foreach ( $attachment_ids as $attachment_id ) :
+					$src = wp_get_attachment_image_src( $attachment_id, 'medium_large' )[0];
+					?>
+					<li class="splide__slide">
+						<img src="<?php echo $src?>" />
+					</li>
+				<?php
+				endforeach;
+				?>
+			</ul>
+		</div>
+	</div>
+<?php
+endif;
+if ( $attachment_ids && $product->get_image_id() ):
+	?>
 
-if ( $attachment_ids && $product->get_image_id() ) {
-	foreach ( $attachment_ids as $attachment_id ) {
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id ), $attachment_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-	}
-}
+	<ul id="thumbnails" class="thumbnails">
+		<?php
+		foreach ( $attachment_ids as $attachment_id ) :
+			$src = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
+			?>
+			<li class="thumbnail">
+				<img src="<?php echo $src?>">
+			</li>
+		<?php
+		endforeach;
+		?>
+	</ul>
+<?php
+endif;

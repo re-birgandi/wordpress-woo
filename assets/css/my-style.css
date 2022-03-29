@@ -113,6 +113,37 @@ select.search-categories {
     height: 169px !important;
 }
 /*---------image menu category------------*/
+
+/*---------image gallery single------------*/
+.thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+}
+.thumbnail {
+opacity: 0.3;
+}
+
+.thumbnail.is-active {
+    opacity: 1;
+}
+ 
+/*---------image gallery single------------*/
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
         display: block;
