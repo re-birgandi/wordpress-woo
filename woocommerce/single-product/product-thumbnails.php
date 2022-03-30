@@ -23,42 +23,50 @@ if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 }
 
 global $product;
-
 $attachment_ids = $product->get_gallery_image_ids();
 if ( $attachment_ids && $product->get_image_id() ):
 	?>
-	<div id="main-slider" class="splide">
-		<div class="splide__track">
-			<ul class="splide__list">
+    <div id="slider-single">
+    <div id="main-slider" class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+					<?php echo get_the_post_thumbnail( $product->get_id(), 'medium_large' ) ?>
+                </li>
 				<?php
 				foreach ( $attachment_ids as $attachment_id ) :
 					$src = wp_get_attachment_image_src( $attachment_id, 'medium_large' )[0];
 					?>
-					<li class="splide__slide">
-						<img src="<?php echo $src?>" />
-					</li>
+                    <li class="splide__slide">
+                        <img src="<?php echo $src ?>"/>
+                    </li>
 				<?php
 				endforeach;
 				?>
-			</ul>
-		</div>
-	</div>
+            </ul>
+        </div>
+    </div>
+
 <?php
 endif;
 if ( $attachment_ids && $product->get_image_id() ):
 	?>
 
-	<ul id="thumbnails" class="thumbnails">
+    <ul id="thumbnails" class="thumbnails">
+        <li class="thumbnail">
+			<?php echo get_the_post_thumbnail( $product->get_id(), 'full' ) ?>
+        </li>
 		<?php
 		foreach ( $attachment_ids as $attachment_id ) :
 			$src = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
 			?>
-			<li class="thumbnail">
-				<img src="<?php echo $src?>">
-			</li>
+            <li class="thumbnail">
+                <img src="<?php echo $src ?>">
+            </li>
 		<?php
 		endforeach;
 		?>
-	</ul>
+    </ul>
+    </div>
 <?php
 endif;

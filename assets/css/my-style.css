@@ -142,7 +142,12 @@ opacity: 0.3;
 .thumbnail.is-active {
     opacity: 1;
 }
- 
+#slider-single{
+    width: 59% !important;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
 /*---------image gallery single------------*/
 @media only screen and (max-width: 314px) {
     .coustom-orderby {
