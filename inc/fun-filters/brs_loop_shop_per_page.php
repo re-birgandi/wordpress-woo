@@ -1,6 +1,7 @@
 <?php
 //تعیین تعداد محصول در هر صفحه
-function brs_loop_shop_per_page( $cols ) {
+function brs_loop_shop_per_page( $posts_per_page ) {
+	//$posts_per_page:تعداد محصول در هر صفحه
 	$perPage = sanitize_text_field( $_GET['per_page'] );
 	if ( $perPage == PER_PAGES['all'] ) {
 		return - 1;

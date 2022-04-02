@@ -44,7 +44,9 @@ $wrapper_classes   = apply_filters(
 			$html .= '</div>';
 		}
        $attachment_ids = $product->get_gallery_image_ids();
-        if(empty($attachment_ids))
+        if(empty($attachment_ids)):
+	    echo " <div id='slider-single'>"  ;
 		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
+         echo "</div>";
+        endif;
 		do_action( 'woocommerce_product_thumbnails' );

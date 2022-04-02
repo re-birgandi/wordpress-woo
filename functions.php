@@ -84,3 +84,4 @@ add_filter( 'image_size_names_choose', 'brs_custom_sizes' );
 
 //CUSTOM FILTER
 add_filter( 'brs_catalog_orderby_options', 'brs_change_text_catalog_orderby' );
+
