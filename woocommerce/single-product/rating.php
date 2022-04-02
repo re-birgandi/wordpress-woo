@@ -29,22 +29,16 @@ $rating_count = $product->get_rating_count();
 $review_count = $product->get_review_count();
 $average      = $product->get_average_rating();
 
-
  if ( $rating_count > 0 ) : ?>
-
 	<div >
 		<?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
 		<?php if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
-
-            <a href="#" class="test"  rel="nofollow" >
+            <a href=" <?php echo rtrim($product->get_permalink(),'/').'#tab-reviews'; ?>" class="test"  rel="nofollow" >
                   افزودن دیدگاه/دیدگاه <?php  esc_html_e ("(". $review_count.")" )  ?>
             </a>
-
 			<?php // phpcs:enable ?>
 		<?php endif ?>
 
 	</div>
-
-
 <?php endif; ?>
