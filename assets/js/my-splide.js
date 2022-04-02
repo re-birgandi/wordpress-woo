@@ -1,6 +1,7 @@
 var splide = new Splide( '#main-slider', {
     pagination:false,
     rewind: true,
+
 } );
 
 
