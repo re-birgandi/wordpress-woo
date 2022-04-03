@@ -59,6 +59,8 @@ remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_p
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);//single
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);//single
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);//single
 
 //ACTIONS
 
@@ -69,7 +71,8 @@ add_action( 'woocommerce_before_shop_loop', 'brs_pagination', 10 );//pagination 
 add_action( 'woocommerce_after_shop_loop_item', 'brs_template_loop_product_title', 10 );//title product
 add_action( 'woocommerce_after_shop_loop_item', 'brs_template_loop_add_to_cart', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'brs_template_loop_rating', 10 );
-
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 5);//single
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);//single
 //ACTIONS AJAX TODO:ADD FUNCTION brs_add_cart_shop AND INCLUDE GET TYPE PRODUCT IN JS
 add_action( 'wp_ajax_brs_add_cart_shop', 'brs_add_cart_shop' );
 add_action( 'wp_ajax_nopriv_brs_add_cart_shop', 'brs_add_cart_shop' );

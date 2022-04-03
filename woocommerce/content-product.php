@@ -30,7 +30,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         <div class="product product-single">
             <div class="product-thumb">
 			<?php
-			echo $product->get_type();//TODO::DELETE
+			 
 			/**
 			 * Hook: woocommerce_before_shop_loop_item.
 			 *

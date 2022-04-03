@@ -42,3 +42,7 @@ $average      = $product->get_average_rating();
 
 	</div>
 <?php endif; ?>
+<?php
+echo wc_get_stock_html( $product );
+?>
+

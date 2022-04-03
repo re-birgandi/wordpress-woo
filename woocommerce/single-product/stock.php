@@ -20,4 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<p class="stock <?php echo esc_attr( $class ); ?>"><?php echo wp_kses_post( $availability ); ?></p>
+<p style="margin-top: 10px"><strong>موجودی:</strong> <?php echo wp_kses_post( $availability ); ?></p><!----TODO::---->
+
