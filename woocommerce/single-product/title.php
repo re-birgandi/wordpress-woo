@@ -18,18 +18,22 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+global $product;
 if ( function_exists( 'brs_offer_new_product' ) && brs_offer_new_product() ):
-	global $product ;
-    new Brs_Discount_Price($product->get_id());
-	$discount = Brs_Discount_Price::brs_handle_discount_product($product->get_type() );
-	?>
-    <div class="product-label">
-		<?php echo brs_offer_new_product() ? '<span>جدید</span>' : '' ?>
-        <span class="sale">
+
+	new Brs_Discount_Price( $product->get_id() );
+	$discount = Brs_Discount_Price::brs_handle_discount_product( $product->get_type() );
+	if ( $discount ):
+		?>
+        <div class="product-label">
+			<?php echo brs_offer_new_product() ? '<span>جدید</span>' : '' ?>
+            <span class="sale">
             <?php
-      echo     ! $discount['max'] ? $discount['min'].'%' :  $discount['min'].'%'.' - '.   $discount['max'].'%' ;        ?></span>
-    </div>
-<?php
+            echo ! $discount['max'] ? $discount['min'] . '%' : $discount['min'] . '%' . ' - ' . $discount['max'] . '%'; ?></span>
+        </div>
+
+	<?php
+	endif;
 endif;
 
 the_title( '<h2 class="product-name">', '</h1>' );
