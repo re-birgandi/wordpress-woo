@@ -24,14 +24,15 @@ function brs_pagination() {
             <span class="text-uppercase">نمایش:</span>
             <form method="get" class="form-per-page">
                 <select name="select_per_page" class="input select-per-page">
-					<?php foreach ( PER_PAGES as $key => $item ):
-                          ?>
-                        <option <?php selected( PER_PAGES[ $key ], sanitize_text_field( $_GET['per_page'] ) ) ?>
+		            <?php foreach ( PER_PAGES as $key => $item ):
+			            $per_page = isset($_GET['per_page']) ? $_GET['per_page'] : PER_PAGES['default'];
+			            ?>
+                        <option <?php selected( PER_PAGES[ $key ],  sanitize_text_field( $per_page ) ) ?>
                                 value="<?php echo add_query_arg( array(
-									'per_page' => PER_PAGES[ $key ]
-								) ); ?>">
-							<?php echo PER_PAGES[ $key ] ?></option>
-					<?php endforeach; ?>
+						            'per_page' => PER_PAGES[ $key ]
+					            ) ); ?>">
+				            <?php echo PER_PAGES[ $key ] ?></option>
+		            <?php endforeach; ?>
                 </select>
             </form>
         </div>
